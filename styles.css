@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+
+/* Header */
+
+header {
+    padding: 20px;
+}
+
+
+/* Navigation */
+
+nav a {
+    margin-right: 15px;
+}
+
+
+/* Main Content */
+
+main {
+    padding: 20px;
+}
+
+
+/* Sections */
+
+section {
+    margin-bottom: 30px;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 40px;
+}
