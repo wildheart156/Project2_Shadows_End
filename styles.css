@@ -1,40 +1,354 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+/* 1. COLOR VARIABLES */
+
+:root {
+    --background: #172329;
+    --panel: #223139;
+    --panel-light: #2B3C45;
+    --cyan: #20D6DE;
+    --text: #EAF1F3;
+    --muted: #9EAFB7;
+    --border: #52646D;
 }
 
 
-/* Header */
+/* 2. GLOBAL RESET */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+
+/* 3. HEADER */
 
 header {
+    background: #10191E;
+    border-bottom: 2px solid var(--cyan);
     padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 15px;
+    color: var(--cyan);
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 
-/* Navigation */
+/* 4. NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
 nav a {
-    margin-right: 15px;
+    color: var(--text);
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--cyan);
+    border-color: var(--cyan);
+    background: var(--panel);
 }
 
 
-/* Main Content */
+/* 5. MAIN CONTENT */
 
 main {
-    padding: 20px;
+    width: min(1100px, 92%);
+    margin: 40px auto;
+    min-height: 55vh;
 }
 
 
-/* Sections */
+/* 6. PAGE SECTIONS */
 
-section {
+main section {
     margin-bottom: 30px;
+    padding: 25px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+main section:first-child {
+    border-top: 3px solid var(--cyan);
+}
+
+h2 {
+    color: var(--cyan);
+    font-size: 1.7rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: var(--text);
+    margin-top: 0;
+}
+
+p {
+    color: var(--muted);
 }
 
 
-/* Footer */
+/* 7. BUTTONS */
+
+button {
+    display: inline-block;
+    padding: 11px 20px;
+    margin-top: 10px;
+    background: transparent;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+button:hover {
+    background: var(--cyan);
+    color: #10191E;
+    transform: translateY(-2px);
+}
+
+
+/* 8. SUSPECT AND EVIDENCE CARDS */
+
+main section:has(article) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+main section:has(article) h2,
+main section:has(article)>p {
+    grid-column: 1 / -1;
+}
+
+article {
+    padding: 20px;
+    background: var(--panel-light);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan);
+    border-radius: 5px;
+
+    transition: transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-4px);
+    border-color: var(--cyan);
+    background: #30444D;
+}
+
+article h3 {
+    color: var(--cyan);
+}
+
+
+/* 9. EVIDENCE SCANNER PLACEHOLDER */
+
+main section div {
+    padding: 50px 20px;
+    text-align: center;
+    background: #10191E;
+    border: 1px dashed var(--cyan);
+    border-radius: 5px;
+}
+
+
+/* 10. FORMS AND INPUTS */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 450px;
+}
+
+label {
+    color: var(--text);
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    background: #10191E;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+
+/* 11. GENERAL LINK STYLING */
+
+main a {
+    color: var(--cyan);
+}
+
+main a:hover {
+    color: var(--text);
+}
+
+
+/* 12. KEYBOARD ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+
+/* 13. FOOTER */
 
 footer {
+    padding: 20px;
     margin-top: 40px;
+    text-align: center;
+    background: #10191E;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+
+/* 14. TABLET LAYOUT */
+
+@media (max-width: 768px) {
+
+    main {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    main section {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
+
+
+/* 15. MOBILE LAYOUT */
+
+@media (max-width: 480px) {
+
+    main {
+        width: 94%;
+        margin: 18px auto;
+    }
+
+    main section {
+        padding: 16px;
+    }
+
+    main section:has(article) {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    main section:has(article) h2,
+    main section:has(article)>p {
+        grid-column: auto;
+    }
+
+    header {
+        padding: 15px 10px;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+    }
+
+    nav {
+        gap: 4px;
+    }
+
+    nav a {
+        padding: 7px;
+        font-size: 0.72rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    article {
+        padding: 16px;
+    }
+}
+
+
+/* 16. REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
