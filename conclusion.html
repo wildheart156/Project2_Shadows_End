@@ -42,16 +42,57 @@
         </section>
 
 
-        <!-- Final Reveal -->
-        <section>
+        
+<!-- Final Investigation -->
+<section class="final-investigation">
 
-            <h3>The Truth</h3>
+    <h2>Who Murdered Albert Jenkins?</h2>
+
+    <p>Review the clues and choose the murderer.</p>
+
+    <div class="suspect-choices">
+
+        <input type="radio" id="agnes" name="murderer">
+        <label for="agnes">Agnes Jenkins</label>
+
+        <input type="radio" id="dorothy" name="murderer">
+        <label for="dorothy">Dorothy Moore</label>
+
+        <input type="radio" id="anna" name="murderer">
+        <label for="anna">Anna Whitlow</label>
+
+        <input type="radio" id="bentley" name="murderer">
+        <label for="bentley">Bentley Preston</label>
+
+        <input type="radio" id="jonathan" name="murderer">
+        <label for="jonathan">Jonathan Major</label>
+
+        <!-- Correct Answer -->
+        <div class="case-solved">
+            <h3>CASE SOLVED!</h3>
 
             <p>
-                The final solution to the mystery will be revealed here.
+                Jonathan Major murdered Albert Jenkins
+                to hide the money he stole from the company.
+                During the blackout, he stabbed Albert
+                and planted the knife under Anna's bed.
             </p>
+        </div>
 
-        </section>
+        <!-- Incorrect Answer -->
+        <div class="case-unsolved">
+            <h3>Not Quite, Detective!</h3>
+
+            <p>
+                That suspect is incorrect.
+                Review the evidence and try again.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
 
 
         <!-- Replay -->
