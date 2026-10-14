@@ -43,21 +43,111 @@
 
 
         <!-- Puzzle -->
-        <section>
+        
+<!-- Puzzle -->
+<section class="letter-puzzle">
 
-            <h3>Enter the Solution</h3>
+    <h2>The Torn Letter</h2>
 
-            <form>
+    <p>
+        Investigators discovered a torn letter among
+        Albert Jenkins' documents. Reconstruct the
+        message to uncover what Albert planned to reveal.
+    </p>
 
-                <label for="answer">Your Answer:</label>
+    <h3>Letter Fragments</h3>
 
-                <input type="text" id="answer" name="answer">
+    <div class="letter-pieces">
 
-                <button type="submit">Submit</button>
+        <article class="letter-piece">
+            <h4>Piece A</h4>
+            <p>from my company accounts.</p>
+        </article>
 
-            </form>
+        <article class="letter-piece">
+            <h4>Piece B</h4>
+            <p>I recently discovered that Jonathan Major</p>
+        </article>
 
-        </section>
+        <article class="letter-piece">
+            <h4>Piece C</h4>
+            <p>I plan to confront him tonight and expose everything.</p>
+        </article>
+
+        <article class="letter-piece">
+            <h4>Piece D</h4>
+            <p>has been stealing money</p>
+        </article>
+
+    </div>
+
+    <h3>Reconstruct the Letter</h3>
+
+    <p>
+        Select the correct order of the four pieces.
+    </p>
+
+    <div class="letter-answers">
+
+        <input type="radio" id="order-one"
+               name="letter-order">
+
+        <label for="order-one">
+            A - B - C - D
+        </label>
+
+        <input type="radio" id="order-two"
+               name="letter-order">
+
+        <label for="order-two">
+            B - D - A - C
+        </label>
+
+        <input type="radio" id="order-three"
+               name="letter-order">
+
+        <label for="order-three">
+            D - C - B - A
+        </label>
+
+        <input type="radio" id="order-four"
+               name="letter-order">
+
+        <label for="order-four">
+            B - A - D - C
+        </label>
+
+        <div class="letter-success">
+            <h3>Letter Reconstructed!</h3>
+
+            <p>
+                I recently discovered that Jonathan Major
+                has been stealing money from my company
+                accounts. I plan to confront him tonight
+                and expose everything.
+            </p>
+
+            <p>
+                You've uncovered Albert's final message.
+                Now it's time to identify the murderer.
+            </p>
+
+            <a href="conclusion.html">
+                Continue to Final Investigation
+            </a>
+        </div>
+
+        <div class="letter-error">
+            <p>
+                That order doesn't look right.
+                Examine the fragments and try again.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
 
     </main>
 

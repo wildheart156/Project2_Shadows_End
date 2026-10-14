@@ -734,3 +734,212 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/* ==========================================
+   SHADOW'S END - TORN LETTER PUZZLE
+   ========================================== */
+
+/* Letter fragments */
+.letter-puzzle .letter-pieces {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+/* Individual torn paper pieces */
+.letter-puzzle .letter-piece {
+    background: #e8d8b5;
+    color: #2b2118;
+    padding: 20px;
+    border: 2px dashed #80684a;
+    border-radius: 6px;
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+
+.letter-puzzle .letter-piece:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.letter-puzzle .letter-piece:hover {
+    transform: scale(1.03);
+}
+
+/* Text on the paper */
+.letter-puzzle .letter-piece h4,
+.letter-puzzle .letter-piece p {
+    color: #2b2118;
+}
+
+/* Answer choices */
+.letter-puzzle .letter-answers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 15px;
+    background: transparent;
+    border: none;
+    text-align: left;
+}
+
+.letter-puzzle .letter-answers input[type="radio"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--cyan);
+}
+
+.letter-puzzle .letter-answers label {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+/* Hide results until an answer is selected */
+.letter-puzzle .letter-success,
+.letter-puzzle .letter-error {
+    display: none;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+/* Correct answer message */
+.letter-puzzle .letter-success {
+    background: #e8d8b5;
+    color: #2b2118;
+    border: 2px solid #80684a;
+}
+
+.letter-puzzle .letter-success h3,
+.letter-puzzle .letter-success p {
+    color: #2b2118;
+}
+
+/* Incorrect answer message */
+.letter-puzzle .letter-error {
+    background: #4a2626;
+    color: white;
+    border: 1px solid #d77a7a;
+}
+
+.letter-puzzle .letter-error p {
+    color: white;
+}
+
+/* Show success when correct answer is selected */
+.letter-puzzle .letter-answers:has(#order-two:checked)
+.letter-success {
+    display: block;
+}
+
+/* Show error when wrong answer is selected */
+.letter-puzzle .letter-answers:has(
+    #order-one:checked,
+    #order-three:checked,
+    #order-four:checked
+) .letter-error {
+    display: block;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .letter-puzzle .letter-pieces {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .letter-puzzle .letter-piece {
+        transition: none;
+    }
+}
+
+
+
+/* ==========================================
+   FINAL INVESTIGATION
+   ========================================== */
+
+.final-investigation .suspect-choices {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    text-align: left;
+}
+
+/* Suspect choices */
+.final-investigation input[type="radio"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--cyan);
+}
+
+.final-investigation .suspect-choices label {
+    padding: 12px;
+    background: var(--panel-light);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.final-investigation .suspect-choices label:hover {
+    border-color: var(--cyan);
+}
+
+/* Hide both results at first */
+.final-investigation .case-solved,
+.final-investigation .case-unsolved {
+    display: none;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+/* Correct answer */
+.final-investigation .case-solved {
+    background: #183c34;
+    border: 2px solid #49cba3;
+}
+
+.final-investigation .case-solved h3 {
+    color: #49cba3;
+}
+
+/* Incorrect answer */
+.final-investigation .case-unsolved {
+    background: #4a2626;
+    border: 2px solid #d77a7a;
+}
+
+.final-investigation .case-unsolved h3 {
+    color: #ffb0b0;
+}
+
+/* Show correct message when Jonathan is selected */
+.final-investigation .suspect-choices:has(#jonathan:checked)
+.case-solved {
+    display: block;
+}
+
+/* Show incorrect message for other suspects */
+.final-investigation .suspect-choices:has(
+    #agnes:checked,
+    #dorothy:checked,
+    #anna:checked,
+    #bentley:checked
+) .case-unsolved {
+    display: block;
+}
+
