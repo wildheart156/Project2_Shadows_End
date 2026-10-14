@@ -10,16 +10,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="home-page">
 
-    <!-- Header -->
-    <header>
+    <!-- Site Header and Navigation -->
+    <header class="site-header">
 
-        <h1>Shadow's End</h1>
+        <a class="site-logo" href="index.html">SHADOW'S END</a>
 
-        <!-- Main Navigation -->
         <nav>
-            <a href="index.html">Home</a>
+            <a class="active" href="index.html">Home</a>
             <a href="suspects.html">Suspects</a>
             <a href="evidence.html">Evidence</a>
             <a href="puzzle.html">Puzzle</a>
@@ -29,38 +28,83 @@
     </header>
 
 
-    <!-- Main Content -->
-    <main>
-        <section class="hero"></section>
+    <main class="home-main">
 
-        <!-- Introduction -->
-        <section>
-            
-            <h2>The Mystery Begins</h2>
+        <!-- Hero: Mansion Background -->
+        <section class="hero">
 
-            <p>
-                A wealthy benefactor has mysteriously died during a private
-                dinner. Everyone at the dinner has a possible motive.
-                Your job is to investigate the evidence and discover what happened.
-            </p>
+            <div class="hero-content">
 
-            
-            <a href="suspects.html" class="investigate-button">Begin Investigation</a>
+                <p class="eyebrow">A MURDER MYSTERY INVESTIGATION</p>
 
+                <h1>SHADOW'S END</h1>
+
+                <h2>The truth lies beneath the surface.</h2>
+
+                <p class="hero-description">
+                    A wealthy benefactor has mysteriously died during
+                    a private dinner. Everyone at the dinner has a
+                    possible motive. Your job is to investigate the
+                    evidence and discover what happened.
+                </p>
+
+                <a class="primary-button" href="suspects.html">
+                    Begin Investigation
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+
+            </div>
 
         </section>
 
 
-        <!-- Case Introduction -->
-        <section>
+        <!-- Case Overview -->
+        <section class="case-overview">
 
-            <h2>The Case</h2>
+            <!-- Evidence Image -->
+            <div class="case-image">
+                <img src="images/evidence-dinner.jpg" alt="A mysterious dinner scene with documents and a wine glass">
+            </div>
 
-            <p>
-                The death occurred during a private dinner at the benefactor's
-                mansion. With multiple suspects, conflicting stories, and
-                unexplained evidence, the truth is hidden somewhere within the case.
-            </p>
+
+            <!-- Case Description -->
+            <div class="case-content">
+
+                <p class="eyebrow">THE CASE</p>
+
+                <h2>A Night of Secrets</h2>
+
+                <p>
+                    The death occurred during a private dinner at
+                    the benefactor's mansion. With multiple suspects,
+                    conflicting stories, and unexplained evidence,
+                    the truth is hidden somewhere within the case.
+                </p>
+
+                <div class="case-details">
+
+                    <div class="case-detail">
+                        <span class="detail-label">THE VICTIM</span>
+                        <span>Albert Jenkins</span>
+                    </div>
+
+                    <div class="case-detail">
+                        <span class="detail-label">THE LOCATION</span>
+                        <span>Jenkins Estate Mansion</span>
+                    </div>
+
+                    <div class="case-detail">
+                        <span class="detail-label">YOUR MISSION</span>
+                        <span>Discover the truth</span>
+                    </div>
+
+                </div>
+
+                <a class="text-link" href="evidence.html">
+                    Examine the Evidence
+                </a>
+
+            </div>
 
         </section>
 
@@ -68,10 +112,8 @@
 
 
     <!-- Footer -->
-    <footer>
-
-        <p>Shadow's End &copy; 2026</p>
-
+    <footer class="site-footer">
+        <p>SHADOW'S END &copy; 2026</p>
     </footer>
 
 </body>
