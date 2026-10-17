@@ -750,6 +750,7 @@ footer p {
     padding: 0;
     background: transparent;
     border: none;
+    width: 100%
 }
 
 /* Individual torn paper pieces */
@@ -759,17 +760,12 @@ footer p {
     padding: 20px;
     border: 2px dashed #80684a;
     border-radius: 6px;
-    transform: rotate(-1deg);
-    transition: transform 0.3s ease;
+    min-width: 0;
+    
 }
 
-.letter-puzzle .letter-piece:nth-child(even) {
-    transform: rotate(2deg);
-}
 
-.letter-puzzle .letter-piece:hover {
-    transform: scale(1.03);
-}
+
 
 /* Text on the paper */
 .letter-puzzle .letter-piece h4,
@@ -835,17 +831,14 @@ footer p {
 }
 
 /* Show success when correct answer is selected */
-.letter-puzzle .letter-answers:has(#order-two:checked)
-.letter-success {
+/* Show success when the correct order is selected */
+.letter-puzzle .letter-answers:has(#piece-one option[value="B"]:checked):has(#piece-two option[value="D"]:checked):has(#piece-three option[value="A"]:checked):has(#piece-four option[value="C"]:checked) .letter-success {
     display: block;
 }
 
-/* Show error when wrong answer is selected */
-.letter-puzzle .letter-answers:has(
-    #order-one:checked,
-    #order-three:checked,
-    #order-four:checked
-) .letter-error {
+
+/* Show error when all four pieces are selected incorrectly */
+.letter-puzzle .letter-answers:has(#piece-one option:not([value=""]):checked):has(#piece-two option:not([value=""]):checked):has(#piece-three option:not([value=""]):checked):has(#piece-four option:not([value=""]):checked):not(:has(#piece-one option[value="B"]:checked):has(#piece-two option[value="D"]:checked):has(#piece-three option[value="A"]:checked):has(#piece-four option[value="C"]:checked)) .letter-error {
     display: block;
 }
 
@@ -943,3 +936,30 @@ footer p {
     display: block;
 }
 
+/* Albert Jenkins picture */
+.victim-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Suspect pictures */
+.suspect-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+/* Albert Jenkins picture */
+.victim-image {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    margin: 10px auto;
+}
