@@ -84,39 +84,47 @@
     <h3>Reconstruct the Letter</h3>
 
     <p>
-        Select the correct order of the four pieces.
+        Put the four letter fragments in the correct order to reveal Albert's message.
     </p>
+
 
     <div class="letter-answers">
 
-        <input type="radio" id="order-one"
-               name="letter-order">
+        <label for="piece-one">First Piece</label>
+<select id="piece-one">
+    <option value="">Choose a piece</option>
+    <option value="A">Piece A</option>
+    <option value="B">Piece B</option>
+    <option value="C">Piece C</option>
+    <option value="D">Piece D</option>
+</select>
 
-        <label for="order-one">
-            A - B - C - D
-        </label>
+<label for="piece-two">Second Piece</label>
+<select id="piece-two">
+    <option value="">Choose a piece</option>
+    <option value="A">Piece A</option>
+    <option value="B">Piece B</option>
+    <option value="C">Piece C</option>
+    <option value="D">Piece D</option>
+</select>
 
-        <input type="radio" id="order-two"
-               name="letter-order">
+<label for="piece-three">Third Piece</label>
+<select id="piece-three">
+    <option value="">Choose a piece</option>
+    <option value="A">Piece A</option>
+    <option value="B">Piece B</option>
+    <option value="C">Piece C</option>
+    <option value="D">Piece D</option>
+</select>
 
-        <label for="order-two">
-            B - D - A - C
-        </label>
-
-        <input type="radio" id="order-three"
-               name="letter-order">
-
-        <label for="order-three">
-            D - C - B - A
-        </label>
-
-        <input type="radio" id="order-four"
-               name="letter-order">
-
-        <label for="order-four">
-            B - A - D - C
-        </label>
-
+<label for="piece-four">Fourth Piece</label>
+<select id="piece-four">
+    <option value="">Choose a piece</option>
+    <option value="A">Piece A</option>
+    <option value="B">Piece B</option>
+    <option value="C">Piece C</option>
+    <option value="D">Piece D</option>
+</select>
         <div class="letter-success">
             <h3>Letter Reconstructed!</h3>
 
