@@ -1,3 +1,60 @@
+
+Cj
+cj_0544
+Invisible
+﻿
+Wildheart [Noir], 
+ — 
+1:32 PM
+Did u work on any of them yet? Shouldnt be too hard to answer most. I dont have them pull up in front of me rn
+Cj
+ — 
+1:33 PM
+Not really but I can work on em now
+Cj
+ — 
+6:42 PM
+hey, i just got home im almost done with the questions. you wanna start recording at 730
+these are the questions im doing Your 8 presentation questions
+
+    Q3 #1 — Navigation: Walk through a visitor's path from the home page to a key detail page.
+    Q4 #1 — Semantic HTML: Show where semantic landmarks clarify the structure of a page.
+    Q7 #2 — CSS Interaction: How does a CSS-only reveal, hover, focus, or checked state work in your site?
+    Q10 #2 — Testing & Debugging: Describe a defect, the cause you traced, and the code change that fixed it.
+    Q11 #4 — Project Scope: If you did not pursue bonus credit, how did you prioritize core requirements instead?
+
+Mandatory Q12 questions — your part
+
+    Q12 #1: Trace one complete feature from its HTML structure through CSS selectors and assets to the final browser result. Which files connect it to the rest of the site?
+    Q12 #2: Show a bug you fixed, explain its root cause, and demonstrate or document the before-and-after result.
+    Q12 #5: Identify one fragile HTML or CSS pattern, propose specific refactor steps, and explain how you would test for visual and accessibility regressions.
+
+Wildheart [Noir], 
+ — 
+6:46 PM
+let me try and fix up the website before we do. i wanna change the puzzle, add photos to the evidence.
+i can call now if we both wanna work on getting the last bit ready
+Cj
+ — 
+6:47 PM
+yea sure 
+Wildheart started a call.
+ — 
+6:51 PM
+Wildheart [Noir], 
+ — 
+7:44 PM
+
+
+/* ==========================================
+   SHADOW'S END - FINAL VERDICT PAGE
+   ========================================== */
+
+.conclusion-page .verdict-main {
+
+message.txt
+12 KB
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,125 +62,424 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shadow's End - Conclusion</title>
+    <title>Shadow's End - Final Verdict</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="conclusion-page">
 
-    <!-- Header -->
-    <header>
+    <!-- Site Header and Navigation -->
+    <header class="site-header">
 
-        <h1>Shadow's End</h1>
+        <a class="site-logo" href="index.html">SHADOW'S END</a>
 
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="suspects.html">Suspects</a>
             <a href="evidence.html">Evidence</a>
             <a href="puzzle.html">Puzzle</a>
-            <a href="conclusion.html">Conclusion</a>
+            <a class="active" href="conclusion.html" aria-current="page">Conclusion</a>
         </nav>
 
     </header>
 
+    <main class="verdict-main">
 
-    <!-- Main Content -->
-    <main>
 
-        <section>
+        <!-- Suspect Selection -->
+        <section class="verdict-investigation">
 
-            <h2>Case Closed</h2>
+            <div class="verdict-heading">
+                <p class="verdict-eyebrow">The Final Decision</p>
 
-            <p>
-                You have uncovered the truth behind the mysterious death.
-            </p>
+                <h2>Who Murdered Albert Jenkins?</h2>
+
+                <p>
+                    Review the suspects one last time. Select the
+                    person you believe is responsible, then submit
+                    your accusation.
+                </p>
+            </div>
+
+            <form id="accusation-form">
+
+                <fieldset class="suspect-grid">
+
+                    <legend class="visually-hidden">
+                        Select the murderer
+                    </legend>
+
+                    <!-- Agnes Jenkins -->
+                    <label class="suspect-option" for="agnes">
+
+                        <input type="radio" id="agnes" name="murderer" value="agnes" required>
+
+                        <span class="suspect-portrait">
+                            <img src="images/agnes_jenkins.jpg" alt="Agnes Jenkins">
+
+                            <span class="selection-mark" aria-hidden="true">✓</span>
+                        </span>
+
+                        <span class="suspect-information">
+                            <span class="suspect-number">SUSPECT 01</span>
+                            <span class="suspect-name">Agnes Jenkins</span>
+                            <span class="suspect-hint">
+                                Family fortune
+                            </span>
+                        </span>
+
+                    </label>
+
+                    <!-- Dorothy Moore -->
+                    <label class="suspect-option" for="dorothy">
+
+                        <input type="radio" id="dorothy" name="murderer" value="dorothy">
+
+                        <span class="suspect-portrait">
+                            <img src="images/dorothy_moore.jpg" alt="Dorothy Moore">
+
+                            <span class="selection-mark" aria-hidden="true">✓</span>
+                        </span>
+
+                        <span class="suspect-information">
+                            <span class="suspect-number">SUSPECT 02</span>
+                            <span class="suspect-name">Dorothy Moore</span>
+                            <span class="suspect-hint">
+                                Business dispute
+                            </span>
+                        </span>
+
+                    </label>
+
+                    <!-- Anna Whitlow -->
+                    <label class="suspect-option" for="anna">
+
+... (219 lines left)
+
+message.txt
+12 KB
+Cj
+ — 
+7:52 PM
+Image
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shadow's End - Final Verdict</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="conclusion-page">
+
+    <!-- Site Header and Navigation -->
+    <header class="site-header">
+
+        <a class="site-logo" href="index.html">SHADOW'S END</a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="suspects.html">Suspects</a>
+            <a href="evidence.html">Evidence</a>
+            <a href="puzzle.html">Puzzle</a>
+            <a class="active" href="conclusion.html" aria-current="page">Conclusion</a>
+        </nav>
+
+    </header>
+
+    <main class="verdict-main">
+
+
+        <!-- Suspect Selection -->
+        <section class="verdict-investigation">
+
+            <div class="verdict-heading">
+                <p class="verdict-eyebrow">The Final Decision</p>
+
+                <h2>Who Murdered Albert Jenkins?</h2>
+
+                <p>
+                    Review the suspects one last time. Select the
+                    person you believe is responsible, then submit
+                    your accusation.
+                </p>
+            </div>
+
+            <form id="accusation-form">
+
+                <fieldset class="suspect-grid">
+
+                    <legend class="visually-hidden">
+                        Select the murderer
+                    </legend>
+
+                    <!-- Agnes Jenkins -->
+                    <label class="suspect-option" for="agnes">
+
+                        <input type="radio" id="agnes" name="murderer" value="agnes" required>
+
+                        <span class="suspect-portrait">
+                            <img src="images/agnes_jenkins.jpg" alt="Agnes Jenkins">
+
+                            <span class="selection-mark" aria-hidden="true">✓</span>
+                        </span>
+
+                        <span class="suspect-information">
+                            <span class="suspect-number">SUSPECT 01</span>
+                            <span class="suspect-name">Agnes Jenkins</span>
+                            <span class="suspect-hint">
+                                Family fortune
+                            </span>
+                        </span>
+
+                    </label>
+
+                    <!-- Dorothy Moore -->
+                    <label class="suspect-option" for="dorothy">
+
+                        <input type="radio" id="dorothy" name="murderer" value="dorothy">
+
+                        <span class="suspect-portrait">
+                            <img src="images/dorothy_moore.jpg" alt="Dorothy Moore">
+
+                            <span class="selection-mark" aria-hidden="true">✓</span>
+                        </span>
+
+                        <span class="suspect-information">
+                            <span class="suspect-number">SUSPECT 02</span>
+                            <span class="suspect-name">Dorothy Moore</span>
+                            <span class="suspect-hint">
+                                Business dispute
+                            </span>
+                        </span>
+
+                    </label>
+
+                    <!-- Anna Whitlow -->
+                    <label class="suspect-option" for="anna">
+
+                        <input type="radio" id="anna" name="murderer" value="anna">
+
+                        <span class="suspect-portrait">
+                            <img src="images/anna_whitlow.jpg" alt="Anna Whitlow">
+
+                            <span class="selection-mark" aria-hidden="true">✓</span>
+                        </span>
+
+                        <span class="suspect-information">
+                            <span class="suspect-number">SUSPECT 03</span>
+                            <span class="suspect-name">Anna Whitlow</span>
+                            <span class="suspect-hint">
+                                The hidden weapon
+                            </span>
+                        </span>
+
+                    </label>
+
+                    <!-- Bentley Preston -->
+                    <label class="suspect-option" for="bentley">
+
+                        <input type="radio" id="bentley" name="murderer" value="bentley">
+
+                        <span class="suspect-portrait">
+                            <img src="images/bentley_preston.jpg" alt="Bentley Preston">
+
+                            <span class="selection-mark" aria-hidden="true">✓</span>
+                        </span>
+
+                        <span class="suspect-information">
+                            <span class="suspect-number">SUSPECT 04</span>
+                            <span class="suspect-name">Bentley Preston</span>
+                            <span class="suspect-hint">
+                                The blackout
+                            </span>
+                        </span>
+
+                    </label>
+
+                    <!-- Jonathan Major -->
+                    <label class="suspect-option" for="jonathan">
+
+                        <input type="radio" id="jonathan" name="murderer" value="jonathan">
+
+                        <span class="suspect-portrait">
+                            <img src="images/jonathan_major.jpg" alt="Jonathan Major">
+
+                            <span class="selection-mark" aria-hidden="true">✓</span>
+                        </span>
+
+                        <span class="suspect-information">
+                            <span class="suspect-number">SUSPECT 05</span>
+                            <span class="suspect-name">Jonathan Major</span>
+                            <span class="suspect-hint">
+                                Financial irregularities
+                            </span>
+                        </span>
+
+                    </label>
+
+                </fieldset>
+
+                <!-- Accusation Button -->
+                <div class="accusation-controls">
+
+                    <p id="selection-prompt" aria-live="polite">
+                        No suspect selected. Review the portraits
+                        and make your decision.
+                    </p>
+
+                    <button type="submit" class="accuse-button">
+                        Accuse Suspect <span>→</span>
+                    </button>
+
+                </div>
+
+            </form>
+
+            <!-- Correct Answer -->
+            <section id="case-solved" class="verdict-result solved-result" aria-live="polite" tabindex="-1" hidden>
+
+                <p class="result-eyebrow">Investigation Complete</p>
+
+                <h2>CASE SOLVED</h2>
+
+                <p class="result-lead">
+                    Jonathan Major murdered Albert Jenkins.
+                </p>
+
+                <p>
+                    Jonathan killed Albert during the blackout to
+                    conceal the money he had stolen from the company.
+                    He then planted the murder weapon beneath
+                    Anna Whitlow's bed in an attempt to frame her.
+                </p>
+
+                <p>
+                    The financial irregularities, the hidden weapon,
+                    and Jonathan's movements near Anna's bedroom
+                    helped expose the truth.
+                </p>
+
+                <a class="verdict-link" href="index.html">
+                    Play Again →
+                </a>
+
+            </section>
+
+            <!-- Incorrect Answer -->
+            <section id="case-unsolved" class="verdict-result unsolved-result" aria-live="polite" tabindex="-1" hidden>
+
+                <p class="result-eyebrow">Investigation Incomplete</p>
+
+                <h2>NOT QUITE, DETECTIVE</h2>
+
+                <p class="result-lead">
+                    Your accusation does not match the evidence.
+                </p>
+
+                <p>
+                    Revisit the evidence board. Consider who benefited
+                    from Albert's death, who had access to the mansion,
+                    and why the murder weapon was hidden beneath
+                    Anna's bed.
+                </p>
+
+                <a class="verdict-link" href="evidence.html">
+                    Review the Evidence →
+                </a>
+
+            </section>
 
         </section>
 
+        <!-- Return to the investigation -->
+        <section class="verdict-footer-prompt">
 
-        
-<!-- Final Investigation -->
-<section class="final-investigation">
+            <p class="verdict-eyebrow">Need More Clues?</p>
 
-    <h2>Who Murdered Albert Jenkins?</h2>
-
-    <p>Review the clues and choose the murderer.</p>
-
-    <div class="suspect-choices">
-
-        <input type="radio" id="agnes" name="murderer">
-<label for="agnes">
-    <img src="images/agnes_jenkins.jpg" alt="Agnes Jenkins">
-    Agnes Jenkins
-</label>
-
-<input type="radio" id="dorothy" name="murderer">
-<label for="dorothy">
-    <img src="images/dorothy_moore.jpg" alt="Dorothy Moore">
-    Dorothy Moore
-</label>
-
-<input type="radio" id="anna" name="murderer">
-<label for="anna">
-    <img src="images/anna_whitlow.jpg" alt="Anna Whitlow">
-    Anna Whitlow
-</label>
-
-<input type="radio" id="bentley" name="murderer">
-<label for="bentley">
-    <img src="images/bentley_preston.jpg" alt="Bentley Preston">
-    Bentley Preston
-</label>
-
-<input type="radio" id="jonathan" name="murderer">
-<label for="jonathan">
-    <img src="images/jonathan_major.jpg" alt="Jonathan Major">
-    Jonathan Major
-</label>
-        <!-- Correct Answer -->
-        <div class="case-solved">
-            <h3>CASE SOLVED!</h3>
+            <h2>Every Detail Matters</h2>
 
             <p>
-                Jonathan Major murdered Albert Jenkins
-                to hide the money he stole from the company.
-                During the blackout, he stabbed Albert
-                and planted the knife under Anna's bed.
+                The smallest detail may reveal the biggest lie.
             </p>
-        </div>
 
-        <!-- Incorrect Answer -->
-        <div class="case-unsolved">
-            <h3>Not Quite, Detective!</h3>
-
-            <p>
-                That suspect is incorrect.
-                Review the evidence and try again.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-
-        <!-- Replay -->
-        <section>
-
-            <a href="index.html">Play Again</a>
+            <a class="verdict-link" href="evidence.html">
+                Return to Evidence →
+            </a>
 
         </section>
 
     </main>
 
-
-    <footer>
-
-        <p>Shadow's End &copy; 2026</p>
-
+    <footer class="site-footer">
+        <p>SHADOW'S END &copy; 2026</p>
     </footer>
+
+    <!-- Check the accusation when the player submits -->
+    <script>
+        const accusationForm =
+            document.getElementById("accusation-form");
+
+        const selectionPrompt =
+            document.getElementById("selection-prompt");
+
+        const solvedMessage =
+            document.getElementById("case-solved");
+
+        const unsolvedMessage =
+            document.getElementById("case-unsolved");
+
+        const suspectRadios =
+            document.querySelectorAll('input[name="murderer"]');
+
+        // Update the prompt when a suspect is selected.
+        suspectRadios.forEach(function (radio) {
+            radio.addEventListener("change", function () {
+                const selectedLabel =
+                    document.querySelector(
+                        'label[for="' + radio.id + '"] .suspect-name'
+                    );
+
+                selectionPrompt.textContent =
+                    "Selected suspect: " +
+                    selectedLabel.textContent +
+                    ". Submit your accusation when ready.";
+            });
+        });
+
+        // Evaluate the accusation only after submission.
+        accusationForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const selectedSuspect =
+                document.querySelector(
+                    'input[name="murderer"]:checked'
+                );
+
+            // The required radio input prevents empty submissions.
+            if (!selectedSuspect) {
+                return;
+            }
+
+            solvedMessage.hidden = true;
+            unsolvedMessage.hidden = true;
+
+            if (selectedSuspect.value === "jonathan") {
+                solvedMessage.hidden = false;
+                solvedMessage.focus();
+            } else {
+                unsolvedMessage.hidden = false;
+                unsolvedMessage.focus();
+            }
+        });
+    </script>
 
 </body>
 
