@@ -617,126 +617,6 @@ footer p {
 }
 
 
-/* TABLET */
-
-@media (max-width: 900px) {
-
-    .site-header {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .site-header nav {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .home-page .hero {
-        min-height: 460px;
-        background-position: center, 60% center;
-    }
-
-    .home-page .case-overview {
-        gap: 25px;
-        padding: 40px 5%;
-    }
-
-    .case-details {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .case-image img {
-        height: 270px;
-    }
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .site-header {
-        padding: 18px 12px;
-    }
-
-    .site-header .site-logo {
-        white-space: normal;
-        text-align: center;
-    }
-
-    .site-header nav {
-        gap: 3px;
-    }
-
-    .site-header nav a {
-        padding: 8px 7px;
-        font-size: 0.68rem;
-        letter-spacing: 0.5px;
-    }
-
-    .home-page .hero {
-        min-height: 500px;
-        padding: 45px 7%;
-
-        background-image:
-            linear-gradient(90deg,
-                rgba(8, 18, 24, 0.94),
-                rgba(8, 18, 24, 0.70)),
-            url("images/mansion.jpg");
-
-        background-position: center, 62% center;
-    }
-
-    .home-page .hero h1 {
-        font-size: clamp(2.4rem, 11vw, 3.5rem);
-        overflow-wrap: anywhere;
-    }
-
-    .home-page .hero h2 {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-
-    .home-page .hero .eyebrow,
-    .case-content .eyebrow {
-        font-size: 0.68rem;
-        letter-spacing: 2px;
-    }
-
-    .hero-description {
-        font-size: 0.95rem;
-    }
-
-    .primary-button {
-        gap: 12px;
-        padding: 13px 15px;
-        font-size: 0.76rem;
-    }
-
-    .home-page .case-overview {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 35px 6%;
-
-        background-position: center, 60% center;
-    }
-
-    .case-content {
-        padding: 20px;
-    }
-
-    .case-content h2 {
-        font-size: 1.9rem;
-    }
-
-    .case-details {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-
 /* ==========================================
    SHADOW'S END - TORN LETTER PUZZLE
    ========================================== */
@@ -991,4 +871,540 @@ main section.letter-puzzle {
     width: 100px;
     height: 100px;
     object-fit: cover;
+}
+
+
+/* ==========================================
+   SHADOW'S END - EVIDENCE CASE FILE
+   ========================================== */
+
+/* Main evidence page */
+.evidence-page .evidence-main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    min-height: 0;
+    background: #10191e;
+}
+
+/* Case file hero banner */
+.evidence-page .evidence-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 280px;
+    padding: 45px 6%;
+    margin: 0;
+    overflow: hidden;
+
+    background-color: #10191e;
+    background-image:
+        linear-gradient(90deg,
+            rgba(8, 18, 24, 0.98) 0%,
+            rgba(8, 18, 24, 0.88) 45%,
+            rgba(8, 18, 24, 0.35) 100%),
+        url("images/evidence-board.jpg");
+
+    background-position: center, center 55%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: none;
+    border-bottom: 1px solid var(--cyan);
+    border-radius: 0;
+}
+
+.evidence-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+}
+
+.evidence-page .evidence-eyebrow {
+    color: var(--cyan);
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.evidence-page .evidence-hero h1 {
+    margin: 12px 0 18px;
+    color: var(--cyan);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-weight: normal;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+.evidence-page .evidence-intro {
+    max-width: 580px;
+    color: #d0dce1;
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+/* Open investigation status */
+.evidence-page .case-status {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+.evidence-page .case-status span {
+    color: var(--muted);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.evidence-page .case-status strong {
+    padding: 6px 10px;
+    color: var(--cyan);
+    background: rgba(32, 214, 222, 0.08);
+    border: 1px solid rgba(32, 214, 222, 0.45);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+}
+
+/* Detective briefing */
+.evidence-page .evidence-briefing {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+    padding: 35px 6%;
+
+    background: #172329;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+}
+
+.evidence-page .evidence-briefing h2,
+.evidence-page .evidence-next h2 {
+    margin: 5px 0 12px;
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: normal;
+}
+
+.evidence-page .evidence-briefing p:not(.evidence-eyebrow) {
+    max-width: 720px;
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+.evidence-page .briefing-stats {
+    display: flex;
+    gap: 24px;
+}
+
+.evidence-page .briefing-stats div {
+    min-width: 100px;
+    padding-left: 16px;
+    border-left: 1px solid var(--cyan);
+}
+
+.evidence-page .briefing-stats strong,
+.evidence-page .briefing-stats span {
+    display: block;
+}
+
+.evidence-page .briefing-stats strong {
+    color: var(--cyan);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.evidence-page .briefing-stats span {
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+/* Evidence grid */
+.evidence-page .evidence-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+
+    width: 100%;
+    margin: 0;
+    padding: 30px 3% 40px;
+
+    background: #10191e;
+    border: none;
+    border-radius: 0;
+}
+
+/* Individual evidence card */
+.evidence-page .evidence-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 0;
+    overflow: hidden;
+
+    background: #14232b;
+    border: 1px solid #38515c;
+    border-radius: 3px;
+    border-left: 1px solid #38515c;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.evidence-page .evidence-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--cyan);
+    background: #14232b;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Photograph frame */
+.evidence-page .evidence-photo {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+    background: #0b1419;
+    border-bottom: 1px solid #38515c;
+}
+
+.evidence-page .evidence-photo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.evidence-page .evidence-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.08);
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.evidence-page .evidence-card:hover .evidence-photo img {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1.05);
+}
+
+/* Number pinned to each photograph */
+.evidence-page .evidence-number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: grid;
+    place-items: center;
+
+    width: 31px;
+    height: 31px;
+
+    color: var(--cyan);
+    background: rgba(8, 18, 24, 0.9);
+    border: 1px solid var(--cyan);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+
+    pointer-events: none;
+}
+
+/* Photograph classification */
+.evidence-page .photo-label {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 6px 9px;
+
+    color: #d9e6ea;
+    background: rgba(8, 18, 24, 0.85);
+
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+
+    pointer-events: none;
+}
+
+/* Evidence text */
+.evidence-page .evidence-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 17px 15px 15px;
+    min-width: 0;
+}
+
+.evidence-page .evidence-category {
+    margin: 0 0 7px;
+    color: var(--cyan);
+    font-size: 0.63rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.evidence-page .evidence-details h3 {
+    margin: 0 0 14px;
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.18rem;
+    font-weight: normal;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* Discovery location */
+.evidence-page .evidence-location {
+    margin: 0 0 17px;
+    color: #c0cdd3;
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+.evidence-page .evidence-location span {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--muted);
+    font-size: 0.62rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+/* Expandable evidence notes */
+.evidence-page .evidence-details details {
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+}
+
+.evidence-page .evidence-details summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 0 3px;
+
+    color: var(--cyan);
+    font-size: 0.77rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.evidence-page .evidence-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.evidence-page .evidence-details summary span {
+    font-size: 1.2rem;
+    transition: transform 0.25s ease;
+}
+
+.evidence-page .evidence-details details[open] summary span {
+    transform: rotate(45deg);
+}
+
+.evidence-page .evidence-details summary:hover {
+    color: var(--text);
+}
+
+.evidence-page .evidence-reveal {
+    padding: 10px 0 3px;
+    animation: evidence-reveal 0.25s ease;
+}
+
+.evidence-page .evidence-reveal>p {
+    margin: 0 0 15px;
+    color: #c0cdd3;
+    font-size: 0.86rem;
+    line-height: 1.8;
+}
+
+/* Detective question */
+.evidence-page .clue-question {
+    margin: 12px 0;
+    padding: 12px;
+
+    color: #c9dce2;
+    background: rgba(32, 214, 222, 0.06);
+    border-left: 3px solid var(--cyan);
+
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+.evidence-page .clue-question strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--cyan);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Puzzle and other evidence actions */
+.evidence-page .evidence-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 12px;
+    padding: 11px 10px;
+
+    color: var(--cyan);
+    background: rgba(8, 18, 24, 0.55);
+    border: 1px solid var(--cyan);
+    border-radius: 3px;
+
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.evidence-page .evidence-action:hover {
+    color: #10191e;
+    background: var(--cyan);
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(32, 214, 222, 0.2);
+}
+
+/* Final investigation prompt */
+.evidence-page .evidence-next {
+    margin: 0;
+    padding: 45px 6%;
+
+    text-align: center;
+    background: #172329;
+    border: none;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+}
+
+.evidence-page .evidence-next .evidence-eyebrow {
+    margin-top: 0;
+}
+
+.evidence-page .evidence-next>p:not(.evidence-eyebrow) {
+    max-width: 620px;
+    margin: 0 auto 22px;
+    line-height: 1.8;
+}
+
+/* Expand animation */
+@keyframes evidence-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .evidence-page .evidence-board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .evidence-page .evidence-photo {
+        height: 220px;
+    }
+
+    .evidence-page .evidence-briefing {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .evidence-page .evidence-hero {
+        min-height: 300px;
+        padding: 35px 6%;
+
+        background-image:
+            linear-gradient(90deg,
+                rgba(8, 18, 24, 0.96),
+                rgba(8, 18, 24, 0.78)),
+            url("images/evidence-board.jpg");
+    }
+
+    .evidence-page .evidence-hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .evidence-page .evidence-intro {
+        font-size: 0.92rem;
+    }
+
+    .evidence-page .evidence-briefing {
+        padding: 28px 6%;
+    }
+
+    .evidence-page .briefing-stats {
+        gap: 16px;
+    }
+
+    .evidence-page .evidence-board {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 22px 5%;
+    }
+
+    .evidence-page .evidence-photo {
+        height: 230px;
+    }
+
+    .evidence-page .evidence-details {
+        padding: 18px;
+    }
+
+    .evidence-page .evidence-details h3 {
+        font-size: 1.3rem;
+    }
+
+    .evidence-page .evidence-next {
+        padding: 35px 6%;
+    }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .evidence-page *,
+    .evidence-page *::before,
+    .evidence-page *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }
