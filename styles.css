@@ -832,13 +832,13 @@ footer p {
 
 /* Show success when correct answer is selected */
 /* Show success when the correct order is selected */
-.letter-puzzle .letter-answers:has(#piece-one option[value="B"]:checked):has(#piece-two option[value="D"]:checked):has(#piece-three option[value="A"]:checked):has(#piece-four option[value="C"]:checked) .letter-success {
+.letter-puzzle .letter-answers:has(#piece-one option[value="B"]:checked):has(#piece-two option[value="D"]:checked):has(#piece-three option[value="A"]:checked):has(#piece-four option[value="C"]:checked):has(#piece-five option[value="E"]:checked) .letter-success {
     display: block;
 }
 
 
 /* Show error when all four pieces are selected incorrectly */
-.letter-puzzle .letter-answers:has(#piece-one option:not([value=""]):checked):has(#piece-two option:not([value=""]):checked):has(#piece-three option:not([value=""]):checked):has(#piece-four option:not([value=""]):checked):not(:has(#piece-one option[value="B"]:checked):has(#piece-two option[value="D"]:checked):has(#piece-three option[value="A"]:checked):has(#piece-four option[value="C"]:checked)) .letter-error {
+.letter-puzzle .letter-answers:has(#piece-one option:not([value=""]):checked):has(#piece-two option:not([value=""]):checked):has(#piece-three option:not([value=""]):checked):has(#piece-four option:not([value=""]):checked):has(#piece-five option:not([value=""]):checked):not(:has(#piece-one option[value="B"]:checked):has(#piece-two option[value="D"]:checked):has(#piece-three option[value="A"]:checked):has(#piece-four option[value="C"]:checked):has(#piece-five option[value="E"]:checked)) .letter-error {
     display: block;
 }
 
