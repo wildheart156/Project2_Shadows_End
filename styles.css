@@ -1408,3 +1408,395 @@ main section.letter-puzzle {
         scroll-behavior: auto !important;
     }
 }
+
+/* ==========================================
+   SHADOW'S END - FINAL VERDICT PAGE
+   ========================================== */
+
+.conclusion-page .verdict-main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    background: #10191e;
+}
+
+/* Verdict introduction */
+.conclusion-page .verdict-hero {
+    margin: 0;
+    padding: 55px 6%;
+    text-align: center;
+    background:
+        linear-gradient(135deg,
+            rgba(8, 18, 24, 0.98),
+            rgba(24, 43, 52, 0.92));
+    border: none;
+    border-bottom: 1px solid var(--cyan);
+    border-radius: 0;
+}
+
+.conclusion-page .verdict-eyebrow {
+    color: var(--cyan);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.conclusion-page .verdict-hero h1 {
+    margin: 15px 0;
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.conclusion-page .verdict-hero>p:not(.verdict-eyebrow) {
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.9;
+}
+
+.conclusion-page .verdict-status {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+    color: var(--cyan);
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+}
+
+.conclusion-page .status-divider {
+    color: var(--border);
+}
+
+/* Investigation area */
+.conclusion-page .verdict-investigation {
+    margin: 0;
+    padding: 45px 5%;
+    background: #10191e;
+    border: none;
+    border-radius: 0;
+}
+
+.conclusion-page .verdict-heading {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.conclusion-page .verdict-heading h2,
+.conclusion-page .verdict-footer-prompt h2 {
+    margin: 10px 0;
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    font-weight: normal;
+}
+
+.conclusion-page .verdict-heading>p:last-child {
+    line-height: 1.8;
+}
+
+/* Reset the generic form and section styles */
+.conclusion-page #accusation-form {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+}
+
+.conclusion-page .suspect-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Hide the fieldset legend visually but keep it accessible */
+.conclusion-page .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Each suspect is a clickable portrait card */
+.conclusion-page .suspect-option {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 8px;
+    overflow: hidden;
+
+    background: #172329;
+    border: 1px solid #3c505a;
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.conclusion-page .suspect-option:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyan);
+    background: #1b2b33;
+}
+
+
+
+/* Portrait area */
+.conclusion-page .suspect-portrait {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #0b1419;
+}
+
+.conclusion-page .suspect-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+
+    filter: brightness(0.83) contrast(1.04);
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.conclusion-page .suspect-option:hover .suspect-portrait img,
+.conclusion-page .suspect-option:focus-within .suspect-portrait img {
+    transform: scale(1.04);
+    filter: brightness(1) contrast(1.04);
+}
+
+
+
+/* Highlight the selected suspect */
+.conclusion-page .suspect-option:has(input:checked) {
+    border: 2px solid var(--cyan);
+    padding: 7px;
+    background: #1d333c;
+    box-shadow: 0 0 20px rgba(32, 214, 222, 0.12);
+}
+
+.conclusion-page .suspect-option:has(input:checked) .selection-mark {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Keyboard selection indicator */
+.conclusion-page .suspect-option:focus-within {
+    outline: 2px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+/* Suspect names and details */
+.conclusion-page .suspect-information {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 15px 8px 12px;
+    text-align: center;
+}
+
+.conclusion-page .suspect-number {
+    color: var(--cyan);
+    font-size: 0.63rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.conclusion-page .suspect-name {
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.conclusion-page .suspect-hint {
+    color: var(--muted);
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+/* Accusation controls */
+.conclusion-page .accusation-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.conclusion-page #selection-prompt {
+    margin: 0;
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.conclusion-page .accuse-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    min-width: 250px;
+    margin: 0;
+    padding: 15px 24px;
+
+    color: var(--cyan);
+    background: rgba(8, 18, 24, 0.8);
+    border: 1px solid var(--cyan);
+    border-radius: 3px;
+
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.conclusion-page .accuse-button span {
+    font-size: 1.2rem;
+}
+
+.conclusion-page .accuse-button:hover {
+    color: #10191e;
+    background: var(--cyan);
+    transform: translateY(-3px);
+    box-shadow: 0 0 22px rgba(32, 214, 222, 0.2);
+}
+
+/* Verdict results */
+.conclusion-page .verdict-result[hidden] {
+    display: none !important;
+}
+
+.conclusion-page .verdict-result {
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 35px;
+    border-radius: 4px;
+    text-align: center;
+    animation: verdict-appear 0.35s ease;
+}
+
+.conclusion-page .solved-result {
+    background: #142b29;
+    border: 1px solid #49cba3;
+    border-top: 3px solid #49cba3;
+}
+
+.conclusion-page .unsolved-result {
+    background: #302323;
+    border: 1px solid #c87575;
+    border-top: 3px solid #c87575;
+}
+
+.conclusion-page .verdict-result .result-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.conclusion-page .solved-result .result-eyebrow,
+.conclusion-page .solved-result h2 {
+    color: #49cba3;
+}
+
+.conclusion-page .unsolved-result .result-eyebrow,
+.conclusion-page .unsolved-result h2 {
+    color: #ffaaaa;
+}
+
+.conclusion-page .verdict-result h2 {
+    margin: 10px 0 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    letter-spacing: 2px;
+}
+
+.conclusion-page .verdict-result p:not(.result-eyebrow) {
+    max-width: 650px;
+    margin: 14px auto;
+    line-height: 1.9;
+}
+
+.conclusion-page .verdict-result .result-lead {
+    color: var(--text);
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+/* Reusable navigation link */
+.conclusion-page .verdict-link {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 18px;
+
+    color: var(--cyan);
+    background: transparent;
+    border: 1px solid var(--cyan);
+    border-radius: 3px;
+
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.conclusion-page .verdict-link:hover {
+    color: #10191e;
+    background: var(--cyan);
+}
+
+/* Bottom prompt */
+.conclusion-page .verdict-footer-prompt {
+    margin: 0;
+    padding: 40px 6%;
+    text-align: center;
+    background: #172329;
+    border: none;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+}
+
+.conclusion-page .verdict-footer-prompt>p:not(.verdict-eyebrow) {
+    line-height: 1.8;
+}
